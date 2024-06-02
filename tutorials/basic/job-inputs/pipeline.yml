@@ -1,6 +1,6 @@
 ---
 resources:
-- name: resource-tutorial
+- name: resource-tutorialgit
   type: git
   source:
     uri: https://github.com/dwan4351/concourse-tutorial.git
@@ -13,6 +13,9 @@ resources:
   type: git
   source:
     uri: https://github.com/cloudfoundry-community/simple-go-web-app.git
+    git_config:
+      - name: safe.directory
+        value: '*'
 
 jobs:
 - name: job-test-app
